@@ -1,5 +1,6 @@
 package com.example._DangNhatGiang.services;
 
+import com.example._DangNhatGiang.entity.Book;
 import com.example._DangNhatGiang.entity.Category;
 import com.example._DangNhatGiang.repository.ICategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,14 @@ public class CategoryService {
             throw new RuntimeException("Category not found");
         }
     }
-
     public Category saveCategory(Category category){ return categoryRepository.save(category); }
+    public void addCatetory(Category category){
+        categoryRepository.save(category);
+    }
+
+    public void updateCatetory(Category category){
+        categoryRepository.save(category);
+    }
+
     public void deleteCategory(Long id){ categoryRepository.deleteById(id); }
 }
