@@ -3,6 +3,7 @@ package com.example._DangNhatGiang.controller;
 import com.example._DangNhatGiang.entity.Book;
 import com.example._DangNhatGiang.services.BookService;
 import com.example._DangNhatGiang.services.CategoryService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,8 +38,9 @@ public class BookController {
         return "book/add";
     }
     @PostMapping("/add")
-    public String addBook(@ModelAttribute("book")Book book, BindingResult bindingResult){
+    public String addBook(@Valid @ModelAttribute("book")Book book, BindingResult bindingResult, Model model){
         if (bindingResult.hasErrors()) {
+            model.addAttribute("categories", categoryService.getAllCategories());
             return "book/add";
         }
         bookService.addBook(book);
