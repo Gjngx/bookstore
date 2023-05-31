@@ -1,6 +1,5 @@
 package com.example._DangNhatGiang.controller;
 
-import com.example._DangNhatGiang.entity.Book;
 import com.example._DangNhatGiang.entity.Category;
 import com.example._DangNhatGiang.services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
