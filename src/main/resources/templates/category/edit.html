@@ -11,7 +11,7 @@
     <h1>Edit Book</h1>
     <form th:action="@{/categories/edit/{id}(id=${category.id})}" th:object="${category}" method="post">
         <div class="col-6 mb-3">
-            <label class="form-label" for="name">Category:</label>
+            <label class="form-label" for="name">Category</label>
             <input class="form-control" type="text" th:field="*{name}" id="name">
         </div>
         <input type="submit" class="btn btn-success" value="Save">

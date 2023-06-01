@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("/books")
+@RequestMapping("/book")
 public class BookController {
     @Autowired
     private BookService bookService;
@@ -44,13 +44,13 @@ public class BookController {
             return "book/add";
         }
         bookService.addBook(book);
-        return "redirect:/books";
+        return "redirect:/book";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteBook(@PathVariable("id") Long bookId) {
         bookService.deleteBook(bookId);
-        return "redirect:/books";
+        return "redirect:/book";
     }
 
     @GetMapping("/edit/{id}")
@@ -69,7 +69,7 @@ public class BookController {
         book.setPrice(updatedBook.getPrice());
         book.setCategory(updatedBook.getCategory());
         bookService.updateBook(book);
-        return "redirect:/books";
+        return "redirect:/book";
     }
 
     @GetMapping("/search")
